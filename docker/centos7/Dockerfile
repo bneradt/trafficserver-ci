@@ -24,8 +24,10 @@ RUN <<EOF
   yum -y install \
     openssl-devel expat-devel pcre-devel pcre2-devel libcap-devel hwloc-devel libunwind-devel \
     xz-devel libcurl-devel ncurses-devel jemalloc-devel GeoIP-devel luajit-devel brotli-devel \
-    ImageMagick-devel ImageMagick-c++-devel hiredis-devel zlib-devel libmaxminddb-devel \
-    perl-ExtUtils-MakeMaker perl-Digest-SHA perl-URI curl tcl-devel java \
+    ImageMagick-devel ImageMagick-c++-devel hiredis-devel zlib-devel \
+    libmaxminddb-devel perl-ExtUtils-MakeMaker perl-Digest-SHA \
+    perl-URI perl-IPC-Cmd perl-Pod-Html \
+    curl tcl-devel java \
     openssl11-libs openssl11 openssl11-devel
 
   # autest stuff

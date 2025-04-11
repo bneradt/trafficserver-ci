@@ -168,12 +168,12 @@ RUN <<EOF
 
   mkdir opentelemetry-cpp
   cd opentelemetry-cpp
-  wget https://github.com/open-telemetry/opentelemetry-cpp/archive/refs/tags/v1.3.0.tar.gz
-  tar zxf v1.3.0.tar.gz
-  cd opentelemetry-cpp-1.3.0
-  cmake -B build -G Ninja -DBUILD_TESTING=OFF -DWITH_EXAMPLES=OFF -DWITH_JAEGER=OFF -DWITH_OTLP=ON -DWITH_OTLP_GRPC=OFF -DWITH_OTLP_HTTP=ON -DCMAKE_POSITION_INDEPENDENT_CODE=ON -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=ON -Dnlohmann_json_ROOT=/opt/ -DCMAKE_INSTALL_PREFIX=/opt
-  cmake --build build --target all
-  cmake --install build --config Debug
+  wget https://github.com/open-telemetry/opentelemetry-cpp/archive/refs/tags/v1.19.0.tar.gz
+  tar zxf v1.19.0.tar.gz
+  cd opentelemetry-cpp-1.19.0
+  cmake -B build -G Ninja -DBUILD_TESTING=OFF -DWITH_EXAMPLES=OFF -DBUILD_SHARED_LIBS=OFF -DWITH_OTLP_GRPC=OFF -DWITH_OTLP_HTTP=ON -DCMAKE_POSITION_INDEPENDENT_CODE=ON -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=ON -DWITH_ABSEIL=OFF
+  cmake --build build --config Release --verbose
+  sudo cmake --install build --prefix /opt
   cd /root
   rm -rf opentelemetry-cpp
 EOF
